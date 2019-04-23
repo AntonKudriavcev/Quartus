@@ -1,0 +1,72 @@
+module parser(
+					input 	wire 		[7:0]		data,
+					input    wire 					clk,
+					output   reg  		[3:0]    out
+);
+//------------------
+reg [2:0] state = 0;
+//------------------
+localparam ID_KEY = 0;
+localparam KEY_0  = 0;
+localparam KEY_1  = 0;
+localparam KEY_2  = 0;
+localparam KEY_3  = 0;
+//------------------
+initial begin
+	out <= 0;
+end
+
+always @(posedge clk) begin
+	case (state)
+		ID_KEY: begin
+			if (data == 0xB0) begin
+				state <= KEY_0;
+			end else if (data == 0xB1) begin
+				state <= KEY_1; 
+			end else if (data == 0xB2) begin
+				state <= KEY_2;
+			end else if (data == 0xB3) begin
+				state <= KEY_3; 
+			end
+		end
+		KEY_0: begin
+			if (data == 0x00) begin
+				out <= 4'b0000;
+				state <= ID_KEY;
+			end else if (data == 0xFF) begin
+				out <= 4'b0001;
+				state <= ID_KEY;
+			end
+		end
+		KEY_1: begin
+			if (data == 0x00) begin
+				out <= 4'b0000;
+				state <= ID_KEY;
+			end else if (data == 0xFF) begin
+				out <= 4'b0010;
+				state <= ID_KEY;
+			end
+		end
+		KEY_2: begin
+			if (data == 0x00) begin
+				out <= 4'b0000;
+				state <= ID_KEY;
+			end else if (data == 0xFF) begin
+				out <= 4'b0100;
+				state <= ID_KEY;
+			end
+		end
+		KEY_3: begin
+			if (data == 0x00) begin
+				out <= 4'b0000;
+				state <= ID_KEY;
+			end else if (data == 0xFF) begin
+				out <= 4'b1000;
+				state <= ID_KEY;
+			end
+		end
+	default ;
+	endcase
+end
+
+endmodule

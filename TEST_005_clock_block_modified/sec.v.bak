@@ -1,0 +1,27 @@
+module sec(input    wire   [0:10]   mil_sec,
+           input    wire            reset,
+           input    wire            clk,
+           output   reg    [0:6]    out
+);
+
+initial begin
+  out <= 0;
+end
+
+always @(posedge clk) begin
+  if (reset) begin
+    out <= 0;
+  end else begin
+    if (mil_sec == 999) begin
+      out <= out + 1;
+      if (out == 59) begin
+        out <= 0;
+      end
+    end
+  end
+end
+
+endmodule
+      
+ 
+        

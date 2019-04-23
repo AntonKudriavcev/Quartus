@@ -1,0 +1,11 @@
+module control (
+						input  wire 			reset,
+						input  wire 			clk,
+						input  wire   [3:0]  key,
+						input  wire   [3:0]  min_m,
+						input  wire   [3:0]  min_l,
+						input  wire   [3:0]  sec_m,
+						input  wire   [3:0]  sec_l,
+
+
+);

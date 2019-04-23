@@ -1,0 +1,42 @@
+//------------------
+// 
+//-----------------
+module mil_sec(input      wire                clk,
+               input      wire                reset,
+               output     reg     [0:10]      out 
+);
+
+parameter frequency = 50000000; // 
+integer count_clk = 16'b0; // 
+
+
+initial begin
+  out     <=     0;
+end
+
+always @(posedge clk) begin
+  if (~reset) begin   
+    count_clk    <=    0;    
+  end else begin
+    count_clk     <=    count_clk + 1;
+    if (count_clk == (frequency/1000)) begin
+      count_clk      <=    0;   
+      out            <=     out + 1;
+      if (out == 999) begin
+      out <= 0;
+      end  
+    end 
+  end  
+end 
+
+endmodule   
+
+
+
+
+        
+        
+        
+        
+        
+        

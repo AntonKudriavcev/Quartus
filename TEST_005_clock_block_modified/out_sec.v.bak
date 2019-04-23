@@ -1,0 +1,41 @@
+module out_sec(      input    wire             clk,
+                     input    wire    [0:6]    data,
+                     output   reg     [0:6]    out_sec,
+                     output   reg     [0:6]    out_dec_sec                    
+);
+
+always @(posedge clk) begin
+  
+  case (data/10)
+			
+				0: out_dec_sec <= 7'b0000001;  
+				1: out_dec_sec <= 7'b1001111; 
+				2: out_dec_sec <= 7'b0010010; 
+				3: out_dec_sec <= 7'b0000110; 
+				4: out_dec_sec <= 7'b1001100; 
+				5: out_dec_sec <= 7'b0100100; 
+				6: out_dec_sec <= 7'b0100000;  						   				
+				default 
+					 out_dec_sec <= 7'b0000001;
+				 
+				endcase
+				
+  case (data % 10)
+			
+				0:  out_sec <= 7'b0000001;  
+				1:  out_sec <= 7'b1001111; 
+				2:  out_sec <= 7'b0010010; 
+				3:  out_sec <= 7'b0000110; 
+				4:  out_sec <= 7'b1001100; 
+				5:  out_sec <= 7'b0100100; 
+				6:  out_sec <= 7'b0100000;  
+				7:  out_sec <= 7'b0001111; 
+				8:  out_sec <= 7'b0000000;  
+				9:  out_sec <= 7'b0000100;			   				
+				default 
+					out_sec   <= 7'b0000001;
+				 
+				endcase
+end
+
+endmodule

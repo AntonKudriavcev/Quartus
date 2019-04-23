@@ -1,0 +1,59 @@
+module split_freq(
+                  input   wire          reset,
+                  input   wire          clk,
+                  input   wire          data,
+                  output  reg    [3:0]  out
+
+);
+
+reg [8:0] count = 0;
+reg [3:0] j = 0;
+
+initial begin
+  out <= 0;
+end
+
+always @(negedge data) begin
+  if (reset) begin
+    j <= 0;
+  end else begin 
+    j <= j + 1;
+  end  
+end
+
+always @(posedge clk) begin
+  if (reset) begin
+    count <= 0;
+    out   <= 0;
+    j     <= 0;
+  end else begin
+  if (j == 1) begin
+    if (count == 486) begin
+      j <= j + 1;
+      out <= 1;
+      count <= 0;
+    end else begin
+      count <= count + 1;
+    end
+  end
+//================================  
+ else if (j > 1) begin
+    if (count == 324) begin
+      count <= 0;
+      if (out == 8) begin
+        out <=  0;
+        j   <=  0;
+      end else begin
+        out <= out + 1;
+      end                
+    end else begin 
+      count <= count + 1;
+    end
+  end
+  end
+end
+
+endmodule
+  
+  
+  

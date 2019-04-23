@@ -1,0 +1,7 @@
+
+State Machine - |block|split_freq:inst1|state
+Name state.NEXT_BITS state.COUNT_ENABLE state.FIRST_BIT state.000 
+state.000 0 0 0 0 
+state.FIRST_BIT 0 0 1 1 
+state.COUNT_ENABLE 0 1 0 1 
+state.NEXT_BITS 1 0 0 1 

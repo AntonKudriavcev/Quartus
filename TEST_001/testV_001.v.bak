@@ -1,0 +1,20 @@
+module(resultt,clk,reset);
+output reg [0:7] resultt;
+input wire clk;
+input wire reset;
+integer count = 8'd0;
+always @ (posedge clk, posedge reset);
+	begin
+		if(posedge reset);
+			begin
+				count = 0;
+				resultt <= 0;
+			end
+		else 
+			begin
+				count++;
+				resultt <= count;
+			end
+	end
+endmodule	
+

@@ -1,0 +1,27 @@
+module out_m(      
+							input    wire             reset,
+							input    wire             clk,
+                     input    wire    [3:0]    data,
+                     output   reg     [6:0]    out
+                                       
+);
+
+
+always @(posedge clk) begin
+	if (reset) begin
+			out <= 1;
+	end else begin	   
+		case (data)			
+			0: out <= 7'b0000001;  
+			1: out <= 7'b1001111; 
+			2: out <= 7'b0010010; 
+			3: out <= 7'b0000110; 
+			4: out <= 7'b1001100; 
+			5: out <= 7'b0100100; 	 						   				
+			default 
+				out <= 7'b0000001;				 
+		endcase
+	end			
+end
+
+endmodule

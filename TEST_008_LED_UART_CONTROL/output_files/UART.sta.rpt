@@ -1,0 +1,1102 @@
+TimeQuest Timing Analyzer report for UART
+Thu Nov 29 11:19:13 2018
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                     ;
++--------------------+------------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; UART                                                             ;
+; Device Family      ; Cyclone II                                                       ;
+; Device Name        ; EP2C20F484C7                                                     ;
+; Timing Models      ; Final                                                            ;
+; Delay Model        ; Combined                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                      ;
++--------------------+------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ; < 0.1%      ;
+;     3-6 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 229.04 MHz ; 229.04 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.366 ; -112.799      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -65.175               ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                               ;
++--------+----------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.366 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.405      ;
+; -3.365 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.403      ;
+; -3.365 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.403      ;
+; -3.365 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.403      ;
+; -3.143 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.182      ;
+; -3.142 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.180      ;
+; -3.142 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.180      ;
+; -3.142 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.180      ;
+; -3.130 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.169      ;
+; -3.129 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.167      ;
+; -3.129 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.167      ;
+; -3.129 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.167      ;
+; -3.116 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.155      ;
+; -3.115 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.153      ;
+; -3.115 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.153      ;
+; -3.115 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.153      ;
+; -3.071 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.110      ;
+; -3.070 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.108      ;
+; -3.070 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.108      ;
+; -3.070 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.108      ;
+; -3.057 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.096      ;
+; -3.056 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.094      ;
+; -3.056 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.094      ;
+; -3.056 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.094      ;
+; -3.050 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.089      ;
+; -3.049 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.087      ;
+; -3.049 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.087      ;
+; -3.049 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.087      ;
+; -3.024 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.063      ;
+; -3.023 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.061      ;
+; -3.023 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.061      ;
+; -3.023 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.061      ;
+; -2.995 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 4.034      ;
+; -2.994 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.032      ;
+; -2.994 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.032      ;
+; -2.994 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 4.032      ;
+; -2.977 ; split_freq:inst1|count[6]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 4.014      ;
+; -2.943 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 3.982      ;
+; -2.942 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.980      ;
+; -2.942 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.980      ;
+; -2.942 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.980      ;
+; -2.917 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 3.956      ;
+; -2.916 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.954      ;
+; -2.916 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.954      ;
+; -2.916 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.954      ;
+; -2.913 ; split_freq:inst1|count[0]        ; split_freq:inst1|count[7]           ; clk          ; clk         ; 1.000        ; 0.000      ; 3.951      ;
+; -2.903 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 3.942      ;
+; -2.902 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.940      ;
+; -2.902 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.940      ;
+; -2.902 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.940      ;
+; -2.829 ; split_freq:inst1|count[2]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.866      ;
+; -2.783 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.820      ;
+; -2.772 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 3.811      ;
+; -2.771 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.809      ;
+; -2.771 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.809      ;
+; -2.771 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.809      ;
+; -2.760 ; split_freq:inst1|count[6]        ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 1.000        ; -0.001     ; 3.797      ;
+; -2.754 ; split_freq:inst1|count[1]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.791      ;
+; -2.741 ; split_freq:inst1|count[12]       ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.778      ;
+; -2.737 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 3.776      ;
+; -2.736 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.774      ;
+; -2.736 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.774      ;
+; -2.736 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.774      ;
+; -2.727 ; split_freq:inst1|count[9]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.764      ;
+; -2.711 ; split_freq:inst1|count[3]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.748      ;
+; -2.700 ; split_freq:inst1|count[6]        ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 1.000        ; -0.001     ; 3.737      ;
+; -2.685 ; split_freq:inst1|count[6]        ; split_freq:inst1|state.NEXT_BITS    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.723      ;
+; -2.682 ; split_freq:inst1|count[0]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.719      ;
+; -2.680 ; split_freq:inst1|count[6]        ; split_freq:inst1|state.FIRST_BIT    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.718      ;
+; -2.668 ; split_freq:inst1|count[4]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.705      ;
+; -2.642 ; split_freq:inst1|count[0]        ; split_freq:inst1|count[8]           ; clk          ; clk         ; 1.000        ; 0.000      ; 3.680      ;
+; -2.635 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.672      ;
+; -2.626 ; split_freq:inst1|count[1]        ; split_freq:inst1|count[7]           ; clk          ; clk         ; 1.000        ; 0.000      ; 3.664      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[0]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[2]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[6]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[4]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[3]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[1]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[5]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.612 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[7]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.648      ;
+; -2.606 ; split_freq:inst1|count[10]       ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.643      ;
+; -2.598 ; split_freq:inst1|count[2]        ; split_freq:inst1|count[7]           ; clk          ; clk         ; 1.000        ; 0.000      ; 3.636      ;
+; -2.586 ; split_freq:inst1|count[5]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.623      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[0]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[2]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[6]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[4]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[3]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[1]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[5]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.565 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[7]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 3.601      ;
+; -2.548 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 3.587      ;
+; -2.547 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.585      ;
+; -2.547 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.585      ;
+; -2.547 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 3.585      ;
+; -2.537 ; split_freq:inst1|count[1]        ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 1.000        ; -0.001     ; 3.574      ;
+; -2.524 ; split_freq:inst1|count[12]       ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 1.000        ; -0.001     ; 3.561      ;
+; -2.514 ; split_freq:inst1|count[11]       ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 3.551      ;
+; -2.510 ; split_freq:inst1|count[9]        ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 1.000        ; -0.001     ; 3.547      ;
++--------+----------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                  ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; split_freq:inst1|state.COUNT_ENABLE ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|state.NEXT_BITS    ; split_freq:inst1|state.NEXT_BITS    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|out[1]             ; split_freq:inst1|out[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|prev_data[0]       ; split_freq:inst1|prev_data[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|state.FIRST_BIT    ; split_freq:inst1|state.FIRST_BIT    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; split_freq:inst1|out[2]             ; split_freq:inst1|out[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[0]                ; keeper:inst2|data[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[2]                ; keeper:inst2|data[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[6]                ; keeper:inst2|data[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[4]                ; keeper:inst2|data[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[3]                ; keeper:inst2|data[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[1]                ; keeper:inst2|data[1]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[5]                ; keeper:inst2|data[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keeper:inst2|data[7]                ; keeper:inst2|data[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; parser:inst|state.KEY_3             ; parser:inst|state.KEY_3             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; parser:inst|state.KEY_1             ; parser:inst|state.KEY_1             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; parser:inst|state.KEY_2             ; parser:inst|state.KEY_2             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; parser:inst|state.KEY_0             ; parser:inst|state.KEY_0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.634 ; split_freq:inst1|count[12]          ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.920      ;
+; 0.983 ; split_freq:inst1|count[10]          ; split_freq:inst1|count[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
+; 0.984 ; split_freq:inst1|out[0]             ; keeper:inst2|prev_b_clk[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.985 ; split_freq:inst1|count[6]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 0.988 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 0.988 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 0.996 ; keeper:inst2|data[1]                ; keeper:inst2|out[1]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.280      ;
+; 0.997 ; split_freq:inst1|state.000          ; split_freq:inst1|prev_data[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.283      ;
+; 1.010 ; split_freq:inst1|out[2]             ; keeper:inst2|prev_b_clk[2]          ; clk          ; clk         ; 0.000        ; 0.001      ; 1.297      ;
+; 1.019 ; split_freq:inst1|out[3]             ; keeper:inst2|prev_b_clk[3]          ; clk          ; clk         ; 0.000        ; 0.001      ; 1.306      ;
+; 1.035 ; split_freq:inst1|count[4]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.321      ;
+; 1.039 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.325      ;
+; 1.044 ; split_freq:inst1|count[5]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[1]           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[10]          ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[11]          ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.143 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.001      ; 1.430      ;
+; 1.152 ; parser:inst|out[0]                  ; parser:inst|out[0]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.438      ;
+; 1.174 ; keeper:inst2|data[5]                ; keeper:inst2|out[5]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.458      ;
+; 1.175 ; keeper:inst2|data[6]                ; keeper:inst2|out[6]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.459      ;
+; 1.182 ; keeper:inst2|data[2]                ; keeper:inst2|out[2]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.466      ;
+; 1.190 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[2]             ; clk          ; clk         ; 0.000        ; -0.001     ; 1.475      ;
+; 1.191 ; keeper:inst2|data[4]                ; keeper:inst2|out[4]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.475      ;
+; 1.192 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[1]             ; clk          ; clk         ; 0.000        ; -0.001     ; 1.477      ;
+; 1.194 ; keeper:inst2|data[3]                ; keeper:inst2|out[3]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.478      ;
+; 1.203 ; keeper:inst2|data[0]                ; keeper:inst2|out[0]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.487      ;
+; 1.211 ; split_freq:inst1|count[11]          ; split_freq:inst1|count[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.231 ; split_freq:inst1|out[1]             ; keeper:inst2|prev_b_clk[1]          ; clk          ; clk         ; 0.000        ; 0.001      ; 1.518      ;
+; 1.292 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.578      ;
+; 1.294 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.580      ;
+; 1.295 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.581      ;
+; 1.296 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.582      ;
+; 1.324 ; keeper:inst2|data[7]                ; keeper:inst2|out[7]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.608      ;
+; 1.365 ; split_freq:inst1|out[1]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 1.652      ;
+; 1.415 ; split_freq:inst1|count[10]          ; split_freq:inst1|count[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.701      ;
+; 1.420 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.706      ;
+; 1.420 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.706      ;
+; 1.468 ; split_freq:inst1|count[4]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.754      ;
+; 1.472 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.758      ;
+; 1.477 ; split_freq:inst1|count[5]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.763      ;
+; 1.491 ; split_freq:inst1|state.NEXT_BITS    ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 1.778      ;
+; 1.495 ; split_freq:inst1|count[10]          ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.781      ;
+; 1.499 ; split_freq:inst1|out[3]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 1.786      ;
+; 1.500 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.786      ;
+; 1.500 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.786      ;
+; 1.501 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[3]             ; clk          ; clk         ; 0.000        ; -0.001     ; 1.786      ;
+; 1.505 ; split_freq:inst1|state.000          ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.791      ;
+; 1.506 ; parser:inst|state.000               ; parser:inst|state.000               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.792      ;
+; 1.520 ; split_freq:inst1|state.COUNT_ENABLE ; split_freq:inst1|state.NEXT_BITS    ; clk          ; clk         ; 0.000        ; 0.001      ; 1.807      ;
+; 1.526 ; parser:inst|out[3]                  ; parser:inst|out[3]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.812      ;
+; 1.535 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.821      ;
+; 1.536 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_3             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.822      ;
+; 1.548 ; split_freq:inst1|count[4]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.834      ;
+; 1.549 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_1             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.835      ;
+; 1.552 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.838      ;
+; 1.554 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_2             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.840      ;
+; 1.558 ; parser:inst|out[2]                  ; parser:inst|out[2]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.844      ;
+; 1.580 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.580 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.597 ; keeper:inst2|out[1]                 ; parser:inst|state.KEY_0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.622 ; keeper:inst2|out[1]                 ; parser:inst|state.KEY_1             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.908      ;
+; 1.627 ; split_freq:inst1|count[0]           ; split_freq:inst1|count[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.913      ;
+; 1.632 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.918      ;
+; 1.643 ; split_freq:inst1|count[11]          ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.929      ;
+; 1.652 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.938      ;
+; 1.653 ; keeper:inst2|prev_b_clk[3]          ; keeper:inst2|data[1]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.939      ;
+; 1.656 ; keeper:inst2|prev_b_clk[3]          ; keeper:inst2|data[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.942      ;
+; 1.656 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.942      ;
+; 1.656 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.942      ;
+; 1.657 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.660 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.946      ;
+; 1.667 ; keeper:inst2|out[1]                 ; parser:inst|state.KEY_3             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.953      ;
+; 1.671 ; keeper:inst2|prev_b_clk[3]          ; keeper:inst2|data[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.957      ;
+; 1.671 ; keeper:inst2|prev_b_clk[3]          ; keeper:inst2|data[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.957      ;
+; 1.680 ; keeper:inst2|out[1]                 ; parser:inst|state.KEY_2             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.966      ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[0]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[0]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[1]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[1]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[2]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[2]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[3]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[3]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[4]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[4]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[5]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[5]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[6]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[6]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[7]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[7]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[0]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[0]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[1]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[1]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[2]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[2]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[3]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[3]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[4]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[4]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[5]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[5]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[6]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[6]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[7]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[7]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[0]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[0]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[1]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[1]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[2]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[2]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[3]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[3]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[0]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[0]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[1]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[1]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[2]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[2]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[3]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[3]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.000               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.000               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_0             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_0             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_1             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_1             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_2             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_2             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_3             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_3             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[10]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[10]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[11]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[11]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[12]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[12]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[1]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[1]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[2]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[2]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[3]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[3]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[4]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[4]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[5]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[5]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[6]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[6]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[7]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[7]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[8]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[8]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[9]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[9]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count_en[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count_en[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[0]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[0]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[1]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[1]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[2]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[2]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[3]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[3]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|prev_data[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|prev_data[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|state.000          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|state.000          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|state.COUNT_ENABLE ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data      ; clk        ; 6.655 ; 6.655 ; Rise       ; clk             ;
+; reset     ; clk        ; 1.728 ; 1.728 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; data      ; clk        ; -4.559 ; -4.559 ; Rise       ; clk             ;
+; reset     ; clk        ; 0.602  ; 0.602  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; out[*]    ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  out[0]   ; clk        ; 7.150 ; 7.150 ; Rise       ; clk             ;
+;  out[1]   ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  out[2]   ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
+;  out[3]   ; clk        ; 7.142 ; 7.142 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; out[*]    ; clk        ; 7.142 ; 7.142 ; Rise       ; clk             ;
+;  out[0]   ; clk        ; 7.150 ; 7.150 ; Rise       ; clk             ;
+;  out[1]   ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  out[2]   ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
+;  out[3]   ; clk        ; 7.142 ; 7.142 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.713 ; -13.758       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -53.380               ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                               ;
++--------+----------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.713 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.745      ;
+; -0.712 ; split_freq:inst1|count[6]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.745      ;
+; -0.663 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.695      ;
+; -0.663 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.695      ;
+; -0.663 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.695      ;
+; -0.662 ; split_freq:inst1|count[1]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.695      ;
+; -0.645 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.677      ;
+; -0.645 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.677      ;
+; -0.645 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.677      ;
+; -0.644 ; split_freq:inst1|count[4]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.677      ;
+; -0.641 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.673      ;
+; -0.641 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.673      ;
+; -0.641 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.673      ;
+; -0.640 ; split_freq:inst1|count[9]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.673      ;
+; -0.627 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.659      ;
+; -0.627 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.659      ;
+; -0.627 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.659      ;
+; -0.626 ; split_freq:inst1|count[10]       ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.659      ;
+; -0.623 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.655      ;
+; -0.623 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.655      ;
+; -0.623 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.655      ;
+; -0.622 ; split_freq:inst1|count[12]       ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.655      ;
+; -0.605 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.637      ;
+; -0.605 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.637      ;
+; -0.605 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.637      ;
+; -0.604 ; split_freq:inst1|count[0]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.637      ;
+; -0.603 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.635      ;
+; -0.603 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.635      ;
+; -0.603 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.635      ;
+; -0.602 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.635      ;
+; -0.601 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.633      ;
+; -0.601 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.633      ;
+; -0.601 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.633      ;
+; -0.600 ; split_freq:inst1|count[2]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.633      ;
+; -0.584 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.616      ;
+; -0.584 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.616      ;
+; -0.584 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.616      ;
+; -0.583 ; split_freq:inst1|count[11]       ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.616      ;
+; -0.578 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.610      ;
+; -0.577 ; split_freq:inst1|count[3]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.610      ;
+; -0.575 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.607      ;
+; -0.575 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.607      ;
+; -0.575 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.607      ;
+; -0.574 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.607      ;
+; -0.524 ; split_freq:inst1|count[0]        ; split_freq:inst1|count[7]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.556      ;
+; -0.519 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.551      ;
+; -0.519 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.551      ;
+; -0.519 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.551      ;
+; -0.518 ; split_freq:inst1|count[5]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.551      ;
+; -0.492 ; split_freq:inst1|count[6]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.523      ;
+; -0.490 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.522      ;
+; -0.490 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.522      ;
+; -0.490 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.522      ;
+; -0.489 ; split_freq:inst1|count[7]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.522      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[0]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[2]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[6]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[4]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[3]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[1]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[5]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.473 ; keeper:inst2|prev_b_clk[0]       ; keeper:inst2|out[7]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.503      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[0]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[2]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[6]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[4]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[3]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[1]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[5]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.461 ; keeper:inst2|prev_b_clk[3]       ; keeper:inst2|out[7]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.491      ;
+; -0.458 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.490      ;
+; -0.458 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[3]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.490      ;
+; -0.458 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.490      ;
+; -0.457 ; split_freq:inst1|count[8]        ; split_freq:inst1|out[0]             ; clk          ; clk         ; 1.000        ; 0.001      ; 1.490      ;
+; -0.442 ; split_freq:inst1|count[1]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.473      ;
+; -0.428 ; split_freq:inst1|count[0]        ; split_freq:inst1|count[8]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.460      ;
+; -0.426 ; split_freq:inst1|count[2]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.457      ;
+; -0.424 ; split_freq:inst1|count[4]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.455      ;
+; -0.420 ; split_freq:inst1|count[1]        ; split_freq:inst1|count[7]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.452      ;
+; -0.420 ; split_freq:inst1|count[9]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.451      ;
+; -0.409 ; split_freq:inst1|count[6]        ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 1.000        ; -0.001     ; 1.440      ;
+; -0.408 ; split_freq:inst1|count[6]        ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 1.000        ; -0.001     ; 1.439      ;
+; -0.406 ; split_freq:inst1|count[10]       ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.437      ;
+; -0.404 ; split_freq:inst1|count[2]        ; split_freq:inst1|count[7]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.436      ;
+; -0.403 ; split_freq:inst1|count[3]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.434      ;
+; -0.402 ; split_freq:inst1|count[12]       ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.433      ;
+; -0.400 ; split_freq:inst1|state.NEXT_BITS ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.431      ;
+; -0.384 ; split_freq:inst1|count[0]        ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.415      ;
+; -0.382 ; split_freq:inst1|state.FIRST_BIT ; split_freq:inst1|state.000          ; clk          ; clk         ; 1.000        ; -0.001     ; 1.413      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[0]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[2]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[6]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[4]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[3]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[1]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
+; -0.375 ; keeper:inst2|prev_b_clk[1]       ; keeper:inst2|out[5]                 ; clk          ; clk         ; 1.000        ; -0.002     ; 1.405      ;
++--------+----------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                  ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; split_freq:inst1|state.COUNT_ENABLE ; split_freq:inst1|state.COUNT_ENABLE ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|state.NEXT_BITS    ; split_freq:inst1|state.NEXT_BITS    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|out[1]             ; split_freq:inst1|out[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|prev_data[0]       ; split_freq:inst1|prev_data[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|state.FIRST_BIT    ; split_freq:inst1|state.FIRST_BIT    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; split_freq:inst1|out[2]             ; split_freq:inst1|out[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[0]                ; keeper:inst2|data[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[2]                ; keeper:inst2|data[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[6]                ; keeper:inst2|data[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[4]                ; keeper:inst2|data[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[3]                ; keeper:inst2|data[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[1]                ; keeper:inst2|data[1]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[5]                ; keeper:inst2|data[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keeper:inst2|data[7]                ; keeper:inst2|data[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parser:inst|state.KEY_3             ; parser:inst|state.KEY_3             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parser:inst|state.KEY_1             ; parser:inst|state.KEY_1             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parser:inst|state.KEY_2             ; parser:inst|state.KEY_2             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parser:inst|state.KEY_0             ; parser:inst|state.KEY_0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; split_freq:inst1|count[12]          ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.363 ; split_freq:inst1|count[10]          ; split_freq:inst1|count[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.366 ; split_freq:inst1|count[6]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.367 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.370 ; split_freq:inst1|out[0]             ; keeper:inst2|prev_b_clk[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.373 ; split_freq:inst1|state.000          ; split_freq:inst1|prev_data[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.384 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.536      ;
+; 0.385 ; split_freq:inst1|count[4]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.387 ; split_freq:inst1|count[5]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.539      ;
+; 0.397 ; keeper:inst2|data[1]                ; keeper:inst2|out[1]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.547      ;
+; 0.401 ; split_freq:inst1|out[2]             ; keeper:inst2|prev_b_clk[2]          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.554      ;
+; 0.412 ; split_freq:inst1|out[3]             ; keeper:inst2|prev_b_clk[3]          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.565      ;
+; 0.436 ; parser:inst|out[0]                  ; parser:inst|out[0]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.588      ;
+; 0.442 ; keeper:inst2|data[5]                ; keeper:inst2|out[5]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.592      ;
+; 0.443 ; split_freq:inst1|count[11]          ; split_freq:inst1|count[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.444 ; keeper:inst2|data[6]                ; keeper:inst2|out[6]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.594      ;
+; 0.447 ; keeper:inst2|data[2]                ; keeper:inst2|out[2]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.597      ;
+; 0.452 ; keeper:inst2|data[4]                ; keeper:inst2|out[4]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.602      ;
+; 0.453 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[2]             ; clk          ; clk         ; 0.000        ; -0.001     ; 0.604      ;
+; 0.454 ; keeper:inst2|data[3]                ; keeper:inst2|out[3]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.604      ;
+; 0.458 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[1]             ; clk          ; clk         ; 0.000        ; -0.001     ; 0.609      ;
+; 0.459 ; keeper:inst2|data[0]                ; keeper:inst2|out[0]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.609      ;
+; 0.462 ; split_freq:inst1|out[1]             ; keeper:inst2|prev_b_clk[1]          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.615      ;
+; 0.478 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.630      ;
+; 0.480 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.632      ;
+; 0.481 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.633      ;
+; 0.482 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|data[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.634      ;
+; 0.501 ; split_freq:inst1|count[10]          ; split_freq:inst1|count[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.505 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.505 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[1]           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[10]          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[11]          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.509 ; split_freq:inst1|count_en[0]        ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.662      ;
+; 0.510 ; split_freq:inst1|out[1]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 0.663      ;
+; 0.520 ; keeper:inst2|data[7]                ; keeper:inst2|out[7]                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.670      ;
+; 0.524 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.676      ;
+; 0.525 ; split_freq:inst1|count[4]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.677      ;
+; 0.527 ; split_freq:inst1|count[5]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.679      ;
+; 0.536 ; split_freq:inst1|count[10]          ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.540 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.692      ;
+; 0.540 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.692      ;
+; 0.553 ; parser:inst|state.000               ; parser:inst|state.000               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.553 ; split_freq:inst1|state.000          ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.556 ; split_freq:inst1|out[3]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 0.709      ;
+; 0.558 ; split_freq:inst1|state.COUNT_ENABLE ; split_freq:inst1|state.NEXT_BITS    ; clk          ; clk         ; 0.000        ; 0.001      ; 0.711      ;
+; 0.559 ; parser:inst|out[3]                  ; parser:inst|out[3]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.711      ;
+; 0.559 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.711      ;
+; 0.560 ; split_freq:inst1|count[4]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.712      ;
+; 0.561 ; split_freq:inst1|state.NEXT_BITS    ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 0.714      ;
+; 0.574 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_3             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.726      ;
+; 0.574 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.726      ;
+; 0.574 ; split_freq:inst1|count[0]           ; split_freq:inst1|count[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.726      ;
+; 0.575 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.727      ;
+; 0.575 ; split_freq:inst1|count[3]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.727      ;
+; 0.579 ; split_freq:inst1|out[0]             ; split_freq:inst1|out[3]             ; clk          ; clk         ; 0.000        ; -0.001     ; 0.730      ;
+; 0.581 ; split_freq:inst1|count[11]          ; split_freq:inst1|count[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.583 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_2             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.735      ;
+; 0.586 ; parser:inst|out[2]                  ; parser:inst|out[2]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.594 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.746      ;
+; 0.607 ; keeper:inst2|out[0]                 ; parser:inst|state.KEY_1             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.759      ;
+; 0.609 ; split_freq:inst1|count[8]           ; split_freq:inst1|count[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.609 ; split_freq:inst1|count[0]           ; split_freq:inst1|count[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.610 ; split_freq:inst1|count[1]           ; split_freq:inst1|count[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.615 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.767      ;
+; 0.615 ; split_freq:inst1|out[2]             ; split_freq:inst1|out[0]             ; clk          ; clk         ; 0.000        ; 0.001      ; 0.768      ;
+; 0.619 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.771      ;
+; 0.619 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.771      ;
+; 0.619 ; keeper:inst2|out[1]                 ; parser:inst|state.KEY_3             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.771      ;
+; 0.621 ; keeper:inst2|prev_b_clk[2]          ; keeper:inst2|prev_b_clk[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.773      ;
+; 0.621 ; keeper:inst2|out[1]                 ; parser:inst|state.KEY_0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.773      ;
+; 0.628 ; parser:inst|out[1]                  ; parser:inst|out[1]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.780      ;
+; 0.629 ; split_freq:inst1|count[2]           ; split_freq:inst1|count[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.781      ;
+; 0.630 ; split_freq:inst1|count[12]          ; split_freq:inst1|count_en[0]        ; clk          ; clk         ; 0.000        ; -0.001     ; 0.781      ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[6]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[6]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|data[7]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|data[7]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|out[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|out[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keeper:inst2|prev_b_clk[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keeper:inst2|prev_b_clk[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[0]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[0]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[1]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[1]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[2]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[2]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|out[3]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|out[3]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.000               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.000               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_0             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_0             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_1             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_1             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_2             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_2             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; parser:inst|state.KEY_3             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; parser:inst|state.KEY_3             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[10]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[10]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[11]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[11]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[12]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[12]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[4]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[4]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[5]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[5]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[6]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[6]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[7]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[7]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[8]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[8]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count[9]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count[9]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|count_en[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|count_en[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|out[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|out[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|prev_data[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|prev_data[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|state.000          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; split_freq:inst1|state.000          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; split_freq:inst1|state.COUNT_ENABLE ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data      ; clk        ; 2.821 ; 2.821 ; Rise       ; clk             ;
+; reset     ; clk        ; 0.166 ; 0.166 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; data      ; clk        ; -2.016 ; -2.016 ; Rise       ; clk             ;
+; reset     ; clk        ; 0.806  ; 0.806  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; out[*]    ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  out[0]   ; clk        ; 3.832 ; 3.832 ; Rise       ; clk             ;
+;  out[1]   ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  out[2]   ; clk        ; 3.844 ; 3.844 ; Rise       ; clk             ;
+;  out[3]   ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; out[*]    ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  out[0]   ; clk        ; 3.832 ; 3.832 ; Rise       ; clk             ;
+;  out[1]   ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  out[2]   ; clk        ; 3.844 ; 3.844 ; Rise       ; clk             ;
+;  out[3]   ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.366   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -3.366   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -112.799 ; 0.0   ; 0.0      ; 0.0     ; -65.175             ;
+;  clk             ; -112.799 ; 0.000 ; N/A      ; N/A     ; -65.175             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data      ; clk        ; 6.655 ; 6.655 ; Rise       ; clk             ;
+; reset     ; clk        ; 1.728 ; 1.728 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; data      ; clk        ; -2.016 ; -2.016 ; Rise       ; clk             ;
+; reset     ; clk        ; 0.806  ; 0.806  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; out[*]    ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  out[0]   ; clk        ; 7.150 ; 7.150 ; Rise       ; clk             ;
+;  out[1]   ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  out[2]   ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
+;  out[3]   ; clk        ; 7.142 ; 7.142 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; out[*]    ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  out[0]   ; clk        ; 3.832 ; 3.832 ; Rise       ; clk             ;
+;  out[1]   ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  out[2]   ; clk        ; 3.844 ; 3.844 ; Rise       ; clk             ;
+;  out[3]   ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 971      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 971      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 51    ; 51   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Nov 29 11:19:11 2018
+Info: Command: quartus_sta UART -c UART
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'UART.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.366
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.366      -112.799 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -65.175 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.713
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.713       -13.758 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -53.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Thu Nov 29 11:19:13 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
